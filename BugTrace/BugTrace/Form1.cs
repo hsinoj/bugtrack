@@ -20,7 +20,9 @@ namespace BugTrace
     }
        
         public string rol;
-      
+        public string uid;
+
+        MySqlConnection conn = new MySqlConnection("server=localhost;database = reporter;username =jonish;password = jonish"); //setting up a profile to establish connection between c# and mysql
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -49,7 +51,7 @@ namespace BugTrace
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("server=localhost;database = reporter;username =jonish;password = jonish"); //setting up a profile to establish connection between c# and mysql
+            
             conn.Open();
           
             if (username.Text == string.Empty)
@@ -63,40 +65,39 @@ namespace BugTrace
 
             else
             {
-                MySqlCommand com = new MySqlCommand("select Username,Password,role from register where username ='" + username.Text + "' and password='" + password.Text + "'", conn);
-     
+                MySqlCommand com = new MySqlCommand("select Username,Password,role,register_id from register where username ='" + username.Text + "' and password='" + password.Text + "'", conn);
+                
                 MySqlDataReader rd = com.ExecuteReader();
                 while (rd.Read())
                 {
-                   rol = rd["role"].ToString();
+                    rol = rd["role"].ToString();
+                    uid = rd["register_id"].ToString();
+                    
                 }
-                if (rol.Equals("DEVELOPER"))
+                if (rol.Equals("TESTER"))
                 {
-                    dashboard d = new dashboard(username.Text, password.Text,"DEVELOPER");
+                    dashboard d = new dashboard(username.Text, password.Text,"TESTER",uid);
                     d.Show();
-                   
                     Visible = false;
                 }
                 else if (rol.Equals("PROGRAMMER"))
                 {
-                    dashboard d = new dashboard(username.Text, password.Text,"PROGRAMMER");
+                    dashboard d = new dashboard(username.Text, password.Text,"PROGRAMMER",uid);
                     d.Show();
                     Visible = false;
-                
                 }
-
-
-
-
-
-                
-
-                
+                else
+                {
+                    dashboard d = new dashboard(username.Text, password.Text, "ADMIN", uid);
+                    d.Show();
+                    Visible = false;
+                }
             }
 
            
 
         }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {

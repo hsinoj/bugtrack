@@ -232,8 +232,8 @@
             this.rrole.FormattingEnabled = true;
             this.rrole.Items.AddRange(new object[] {
             "PROGRAMMER",
-            "DEVELOPER",
-            "TESTER"});
+            "TESTER",
+            "ADMIN"});
             this.rrole.Location = new System.Drawing.Point(119, 351);
             this.rrole.Name = "rrole";
             this.rrole.Size = new System.Drawing.Size(121, 21);

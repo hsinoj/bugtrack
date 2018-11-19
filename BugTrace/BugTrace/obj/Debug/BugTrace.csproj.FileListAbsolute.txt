@@ -14,3 +14,19 @@ C:\Users\jonis\source\repos\BugTrace\BugTrace\bin\Debug\MySql.Data.xml
 C:\Users\jonis\source\repos\BugTrace\BugTrace\obj\Debug\BugTrace.csproj.CopyComplete
 C:\Users\jonis\source\repos\BugTrace\BugTrace\obj\Debug\BugTrace.register.resources
 C:\Users\jonis\source\repos\BugTrace\BugTrace\obj\Debug\BugTrace.dashboard.resources
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\BugTrace.exe.config
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\BugTrace.exe
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\BugTrace.pdb
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\MySql.Data.dll
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\Google.Protobuf.dll
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\bin\Debug\MySql.Data.xml
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.csprojAssemblyReference.cache
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.dashboard.resources
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.Form1.resources
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.Properties.Resources.resources
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.register.resources
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.csproj.GenerateResource.cache
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.csproj.CoreCompileInputs.cache
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.csproj.CopyComplete
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.exe
+E:\study\THE BRITISH COLLEGE\ADVANCED SOFTWARE ENGINEERING\gitgit\bugtrack\BugTrace\BugTrace\obj\Debug\BugTrace.pdb

@@ -30,6 +30,7 @@
         {
             this.profile = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.buggy = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.pend = new System.Windows.Forms.ComboBox();
@@ -73,13 +75,30 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.solution = new System.Windows.Forms.TabPage();
+            this.useracc = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.profile.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.buggy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pimage)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.useracc.SuspendLayout();
             this.SuspendLayout();
             // 
             // profile
@@ -88,16 +107,18 @@
             this.profile.Controls.Add(this.buggy);
             this.profile.Controls.Add(this.history);
             this.profile.Controls.Add(this.tabPage2);
-            this.profile.Location = new System.Drawing.Point(3, 3);
+            this.profile.Controls.Add(this.solution);
+            this.profile.Controls.Add(this.useracc);
+            this.profile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profile.Location = new System.Drawing.Point(0, 0);
             this.profile.Name = "profile";
             this.profile.SelectedIndex = 0;
-            this.profile.Size = new System.Drawing.Size(678, 507);
+            this.profile.Size = new System.Drawing.Size(775, 535);
             this.profile.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.textBox13);
             this.tabPage1.Controls.Add(this.textBox12);
             this.tabPage1.Controls.Add(this.textBox11);
@@ -113,14 +134,25 @@
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(670, 481);
+            this.tabPage1.Size = new System.Drawing.Size(767, 509);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PROFILE";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(281, 355);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(216, 30);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "EDIT";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox13
             // 
@@ -264,6 +296,16 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "MY ACCOUNT";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(281, 355);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(216, 30);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "UPDATE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // buggy
             // 
             this.buggy.Controls.Add(this.button1);
@@ -291,7 +333,7 @@
             this.buggy.Location = new System.Drawing.Point(4, 22);
             this.buggy.Name = "buggy";
             this.buggy.Padding = new System.Windows.Forms.Padding(3);
-            this.buggy.Size = new System.Drawing.Size(670, 481);
+            this.buggy.Size = new System.Drawing.Size(767, 509);
             this.buggy.TabIndex = 1;
             this.buggy.Text = "BUG PROFILE";
             this.buggy.UseVisualStyleBackColor = true;
@@ -1520,13 +1562,14 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 481);
+            this.tabPage2.Size = new System.Drawing.Size(767, 509);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "BUG LIST";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1535,7 +1578,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(464, 40);
+            this.panel5.Location = new System.Drawing.Point(464, 18);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 10);
             this.panel5.TabIndex = 2;
@@ -1544,7 +1587,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(6, 40);
+            this.panel4.Location = new System.Drawing.Point(6, 18);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(203, 10);
             this.panel4.TabIndex = 1;
@@ -1553,35 +1596,152 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label17.Location = new System.Drawing.Point(215, 25);
+            this.label17.Location = new System.Drawing.Point(215, 3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(252, 39);
             this.label17.TabIndex = 0;
             this.label17.Text = "LIST OF BUGS";
             // 
-            // button2
+            // solution
             // 
-            this.button2.Location = new System.Drawing.Point(281, 372);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 30);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "ADD USER";
-            this.button2.UseVisualStyleBackColor = true;
+            this.solution.Location = new System.Drawing.Point(4, 22);
+            this.solution.Name = "solution";
+            this.solution.Padding = new System.Windows.Forms.Padding(3);
+            this.solution.Size = new System.Drawing.Size(767, 509);
+            this.solution.TabIndex = 4;
+            this.solution.Text = "SOLUTION";
+            this.solution.UseVisualStyleBackColor = true;
+            this.solution.Click += new System.EventHandler(this.solution_Click);
             // 
-            // button3
+            // useracc
             // 
-            this.button3.Location = new System.Drawing.Point(413, 372);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 30);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "UPDATE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.useracc.Controls.Add(this.listView1);
+            this.useracc.Location = new System.Drawing.Point(4, 22);
+            this.useracc.Name = "useracc";
+            this.useracc.Padding = new System.Windows.Forms.Padding(3);
+            this.useracc.Size = new System.Drawing.Size(767, 509);
+            this.useracc.TabIndex = 5;
+            this.useracc.Text = "USERACCOUNT";
+            this.useracc.UseVisualStyleBackColor = true;
+            this.useracc.Click += new System.EventHandler(this.useracc_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.ForeColor = System.Drawing.Color.Black;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(761, 503);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "NAME";
+            this.columnHeader1.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "EMAIL";
+            this.columnHeader2.Width = 116;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "USERNAME";
+            this.columnHeader3.Width = 119;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "GENDER";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ROLE";
+            this.columnHeader5.Width = 137;
+            // 
+            // listView2
+            // 
+            this.listView2.BackColor = System.Drawing.Color.White;
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.listView2.ForeColor = System.Drawing.Color.Black;
+            this.listView2.Location = new System.Drawing.Point(-4, 45);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(668, 425);
+            this.listView2.TabIndex = 3;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Project Name";
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Start Line";
+            this.columnHeader7.Width = 59;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "End Line";
+            this.columnHeader8.Width = 55;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Class Name";
+            this.columnHeader9.Width = 73;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Method";
+            this.columnHeader10.Width = 50;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Date";
+            this.columnHeader11.Width = 53;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Description";
+            this.columnHeader12.Width = 101;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Source File";
+            this.columnHeader13.Width = 76;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Image";
+            this.columnHeader14.Width = 186;
             // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 508);
+            this.ClientSize = new System.Drawing.Size(775, 535);
             this.Controls.Add(this.profile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dashboard";
@@ -1595,6 +1755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pimage)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.useracc.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1648,5 +1809,23 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage solution;
+        private System.Windows.Forms.TabPage useracc;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
     }
 }

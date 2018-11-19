@@ -14,14 +14,16 @@ namespace BugTrace
 {
     public partial class dashboard : Form
     {
-      
+        string id;
+       public string prid; 
         string[] store = new string[6];
-        public dashboard(string uname, string pword,string type)
+        MySqlConnection connection = new MySqlConnection("server=localhost; database=reporter; username=jonish; password =jonish "); //setting up a profile to establish connection between c# and mysql
+        
+        public dashboard(string uname, string pword,string type,string id)
         {
             InitializeComponent();
-
-
-            MySqlConnection connection = new MySqlConnection("server=localhost; database=reporter; username=jonish; password =jonish "); //setting up a profile to establish connection between c# and mysql
+            
+            this.id = id;
             connection.Open();
             string sql = "select Name,Email,Username,Password,gender,role from register where Username ='" + uname + "' and Password = '" + pword + "'";
             MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -46,16 +48,37 @@ namespace BugTrace
                     textBox11.Text = store[3];
                     textBox12.Text = store[4];
                     textBox13.Text = store[5];
+
+                    textBox8.Enabled = false;
+                    textBox9.Enabled = false;
+                    textBox10.Enabled = false;
+                    textBox11.Enabled = false;
+                    textBox12.Enabled = false;
+                    textBox13.Enabled = false;
+                    
                 }
                 reader.NextResult();
             }
 
             if (type.Equals("PROGRAMMER"))
             {
-                profile.TabPages.RemoveByKey("buggy"); // Removes all the tabs: tabControl1.TabPages.Clear(); 
+                // Removes all the tabs: tabControl1.TabPages.Clear(); 
+                profile.TabPages.RemoveByKey("useracc"); // Removes all the tabs: tabControl1.TabPages.Clear();
             }
+            else if (type.Equals("TESTER"))
+            {
+                profile.TabPages.RemoveByKey("solution"); //removing solution
+                profile.TabPages.RemoveByKey("useracc"); 
+            }
+            else
+            {
+                profile.TabPages.RemoveByKey("solution"); //removing solution
+            }
+            connection.Close();
+            account();
+            //buglist();
 
-
+            
 
         }
 
@@ -71,9 +94,8 @@ namespace BugTrace
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;database = reporter;username =jonish;password = jonish"); //setting up a profile to establish connection between c# and mysql
-            con.Open();
-            
+           connection.Open();
+
 
             MemoryStream mm = new MemoryStream();
             pimage.Image.Save(mm, pimage.Image.RawFormat);
@@ -82,41 +104,10 @@ namespace BugTrace
             string qry = "insert into product(project_name,line_num_start,line_num_end,class_name,method,issued_date,description,source_file,image) " +
               "values " + "('" + pname.Text + "', '" + pstart.Text + "', '"
               + pend.Text + "','" + pclass.Text + "','" + pmethod.Text + "','" + pdate.Text + "', '" + pdesc.Text + "','" + psource.Text + "','" + b + "')";
-            MySqlCommand cmd = new MySqlCommand(qry, con);
+            MySqlCommand cmd = new MySqlCommand(qry,connection);
 
 
-            string[] ware = new string[9];
-            MySqlDataReader devour = cmd.ExecuteReader();
-            while (devour.HasRows)
-            {
-                while (devour.Read())
-                {
-
-                    ware[0] = devour["project_name"].ToString();
-                    ware[1] = devour["line_num_start"].ToString();
-                    ware[2] = devour["line_num_end"].ToString();
-                    ware[3] = devour["class_name"].ToString();
-                    ware[4] = devour["method"].ToString();
-                    ware[5] = devour["issued_date"].ToString();
-                    ware[6] = devour["description"].ToString();
-                    ware[7] = devour["source_file"].ToString();
-                  //  ware[8] = devour["image"].ToString();
-
-                    pname.Text = ware[0];
-                    pstart.Text = ware[1];
-                    pend.Text = ware[2];
-                    pclass.Text = ware[3];
-                    pmethod.Text = ware[4];
-                    pdate.Text = ware[5];
-                    pdesc.Text = ware[6];
-                    psource.Text = ware[7];
-                  //  pimage.Image =ware[8];
-
-
-                }
-                devour.NextResult();
-            }
-
+           
 
 
             try
@@ -134,6 +125,7 @@ namespace BugTrace
             {
                 MessageBox.Show(ex.Message);
             }
+            connection.Close();
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -202,7 +194,7 @@ namespace BugTrace
             {
                 OpenFileDialog open = new OpenFileDialog();
 
-                open.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+                open.Filter = "Choose Image(*.jpg; *.png; *." +"gif)|*.jpg; *.png; *.gif";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     pimage.Image = Image.FromFile(open.FileName);
@@ -232,6 +224,84 @@ namespace BugTrace
         }
 
         private void pdesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            textBox8.Enabled = true;
+            textBox9.Enabled = true;
+            textBox10.Enabled = true;
+            textBox11.Enabled = true;
+            textBox12.Enabled = true;
+            textBox13.Enabled = true;
+
+            button3.Visible = false;
+            button2.Visible = true;
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            connection.Open();
+            button3.Visible = true;
+            button2.Visible = false;
+            string sql = "update register set Name='"+textBox8.Text + "',Email='"+ textBox9.Text+ "',Username='" + textBox10.Text + "',Password='" + textBox11.Text + "',gender='" + textBox12.Text+ "',role='" + textBox13.Text+"' where register_id ='"+id+"'";
+            MessageBox.Show("Upadted");
+            MySqlCommand cmd = new MySqlCommand(sql,connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            connection.Close();
+
+
+        }
+
+        private void solution_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void useracc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void account()
+        {
+
+            connection.Open();
+   MySqlCommand cmd = new MySqlCommand("select Name,Email,Username,Gender,Role from register",connection);
+            MySqlDataReader data = cmd.ExecuteReader();
+
+            while (data.Read())
+            {
+                ListViewItem lvt = new ListViewItem(data["Name"].ToString());
+                lvt.SubItems.Add(data["Email"].ToString());
+                lvt.SubItems.Add(data["Username"].ToString());
+                lvt.SubItems.Add(data["Gender"].ToString());
+                lvt.SubItems.Add(data["Role"].ToString());
+                listView1.Items.Add(lvt);    
+            }
+            connection.Close();
+        }
+
+       
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+       
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
