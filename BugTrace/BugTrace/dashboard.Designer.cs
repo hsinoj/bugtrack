@@ -55,7 +55,6 @@
             this.pimage = new System.Windows.Forms.PictureBox();
             this.psubmit = new System.Windows.Forms.Button();
             this.psource = new System.Windows.Forms.TextBox();
-            this.pdesc = new System.Windows.Forms.TextBox();
             this.pdate = new System.Windows.Forms.TextBox();
             this.pmethod = new System.Windows.Forms.TextBox();
             this.pclass = new System.Windows.Forms.TextBox();
@@ -72,17 +71,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.history = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.solution = new System.Windows.Forms.TabPage();
-            this.useracc = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -93,11 +81,38 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.solution = new System.Windows.Forms.TabPage();
+            this.useracc = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textEditorControl1 = new ICSharpCode.TextEditor.TextEditorControl();
+            this.pdesc = new ICSharpCode.TextEditor.TextEditorControl();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.csol = new ICSharpCode.TextEditor.TextEditorControl();
+            this.button4 = new System.Windows.Forms.Button();
             this.profile.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.buggy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pimage)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.solution.SuspendLayout();
             this.useracc.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +133,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textEditorControl1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.textBox13);
             this.tabPage1.Controls.Add(this.textBox12);
@@ -308,6 +324,7 @@
             // 
             // buggy
             // 
+            this.buggy.Controls.Add(this.pdesc);
             this.buggy.Controls.Add(this.button1);
             this.buggy.Controls.Add(this.pend);
             this.buggy.Controls.Add(this.pstart);
@@ -315,7 +332,6 @@
             this.buggy.Controls.Add(this.pimage);
             this.buggy.Controls.Add(this.psubmit);
             this.buggy.Controls.Add(this.psource);
-            this.buggy.Controls.Add(this.pdesc);
             this.buggy.Controls.Add(this.pdate);
             this.buggy.Controls.Add(this.pmethod);
             this.buggy.Controls.Add(this.pclass);
@@ -341,7 +357,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 399);
+            this.button1.Location = new System.Drawing.Point(197, 436);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -1375,7 +1391,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label9.Location = new System.Drawing.Point(39, 355);
+            this.label9.Location = new System.Drawing.Point(39, 410);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 20);
             this.label9.TabIndex = 19;
@@ -1384,7 +1400,7 @@
             // 
             // pimage
             // 
-            this.pimage.Location = new System.Drawing.Point(197, 343);
+            this.pimage.Location = new System.Drawing.Point(197, 380);
             this.pimage.Name = "pimage";
             this.pimage.Size = new System.Drawing.Size(141, 50);
             this.pimage.TabIndex = 18;
@@ -1393,7 +1409,7 @@
             // 
             // psubmit
             // 
-            this.psubmit.Location = new System.Drawing.Point(290, 430);
+            this.psubmit.Location = new System.Drawing.Point(338, 460);
             this.psubmit.Name = "psubmit";
             this.psubmit.Size = new System.Drawing.Size(103, 41);
             this.psubmit.TabIndex = 17;
@@ -1404,19 +1420,10 @@
             // psource
             // 
             this.psource.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.psource.Location = new System.Drawing.Point(197, 307);
+            this.psource.Location = new System.Drawing.Point(197, 344);
             this.psource.Name = "psource";
             this.psource.Size = new System.Drawing.Size(297, 30);
             this.psource.TabIndex = 16;
-            // 
-            // pdesc
-            // 
-            this.pdesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pdesc.Location = new System.Drawing.Point(197, 271);
-            this.pdesc.Name = "pdesc";
-            this.pdesc.Size = new System.Drawing.Size(297, 30);
-            this.pdesc.TabIndex = 15;
-            this.pdesc.TextChanged += new System.EventHandler(this.pdesc_TextChanged);
             // 
             // pdate
             // 
@@ -1447,7 +1454,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label8.Location = new System.Drawing.Point(54, 317);
+            this.label8.Location = new System.Drawing.Point(54, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 10;
@@ -1554,7 +1561,7 @@
             this.history.Location = new System.Drawing.Point(4, 22);
             this.history.Name = "history";
             this.history.Padding = new System.Windows.Forms.Padding(3);
-            this.history.Size = new System.Drawing.Size(670, 481);
+            this.history.Size = new System.Drawing.Size(767, 509);
             this.history.TabIndex = 2;
             this.history.Text = "HISTORY";
             this.history.UseVisualStyleBackColor = true;
@@ -1575,104 +1582,9 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(464, 18);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 10);
-            this.panel5.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(6, 18);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(203, 10);
-            this.panel4.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label17.Location = new System.Drawing.Point(215, 3);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(252, 39);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "LIST OF BUGS";
-            // 
-            // solution
-            // 
-            this.solution.Location = new System.Drawing.Point(4, 22);
-            this.solution.Name = "solution";
-            this.solution.Padding = new System.Windows.Forms.Padding(3);
-            this.solution.Size = new System.Drawing.Size(767, 509);
-            this.solution.TabIndex = 4;
-            this.solution.Text = "SOLUTION";
-            this.solution.UseVisualStyleBackColor = true;
-            this.solution.Click += new System.EventHandler(this.solution_Click);
-            // 
-            // useracc
-            // 
-            this.useracc.Controls.Add(this.listView1);
-            this.useracc.Location = new System.Drawing.Point(4, 22);
-            this.useracc.Name = "useracc";
-            this.useracc.Padding = new System.Windows.Forms.Padding(3);
-            this.useracc.Size = new System.Drawing.Size(767, 509);
-            this.useracc.TabIndex = 5;
-            this.useracc.Text = "USERACCOUNT";
-            this.useracc.UseVisualStyleBackColor = true;
-            this.useracc.Click += new System.EventHandler(this.useracc_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.ForeColor = System.Drawing.Color.Black;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(761, 503);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "NAME";
-            this.columnHeader1.Width = 110;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "EMAIL";
-            this.columnHeader2.Width = 116;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "USERNAME";
-            this.columnHeader3.Width = 119;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "GENDER";
-            this.columnHeader4.Width = 120;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ROLE";
-            this.columnHeader5.Width = 137;
-            // 
             // listView2
             // 
-            this.listView2.BackColor = System.Drawing.Color.White;
+            this.listView2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader7,
@@ -1684,9 +1596,9 @@
             this.columnHeader13,
             this.columnHeader14});
             this.listView2.ForeColor = System.Drawing.Color.Black;
-            this.listView2.Location = new System.Drawing.Point(-4, 45);
+            this.listView2.Location = new System.Drawing.Point(3, 45);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(668, 425);
+            this.listView2.Size = new System.Drawing.Size(764, 456);
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -1737,6 +1649,242 @@
             this.columnHeader14.Text = "Image";
             this.columnHeader14.Width = 186;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(464, 18);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 10);
+            this.panel5.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.ForeColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(6, 18);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 10);
+            this.panel4.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label17.Location = new System.Drawing.Point(215, 3);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(252, 39);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "LIST OF BUGS";
+            // 
+            // solution
+            // 
+            this.solution.Controls.Add(this.button4);
+            this.solution.Controls.Add(this.csol);
+            this.solution.Controls.Add(this.textBox3);
+            this.solution.Controls.Add(this.textBox2);
+            this.solution.Controls.Add(this.label21);
+            this.solution.Controls.Add(this.label20);
+            this.solution.Controls.Add(this.label19);
+            this.solution.Controls.Add(this.label18);
+            this.solution.Controls.Add(this.listView3);
+            this.solution.Location = new System.Drawing.Point(4, 22);
+            this.solution.Name = "solution";
+            this.solution.Padding = new System.Windows.Forms.Padding(3);
+            this.solution.Size = new System.Drawing.Size(767, 509);
+            this.solution.TabIndex = 4;
+            this.solution.Text = "SOLUTION";
+            this.solution.UseVisualStyleBackColor = true;
+            this.solution.Click += new System.EventHandler(this.solution_Click);
+            // 
+            // useracc
+            // 
+            this.useracc.Controls.Add(this.textBox1);
+            this.useracc.Controls.Add(this.listView1);
+            this.useracc.Location = new System.Drawing.Point(4, 22);
+            this.useracc.Name = "useracc";
+            this.useracc.Padding = new System.Windows.Forms.Padding(3);
+            this.useracc.Size = new System.Drawing.Size(767, 509);
+            this.useracc.TabIndex = 5;
+            this.useracc.Text = "USERACCOUNT";
+            this.useracc.UseVisualStyleBackColor = true;
+            this.useracc.Click += new System.EventHandler(this.useracc_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.textBox1.Location = new System.Drawing.Point(598, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(144, 21);
+            this.textBox1.TabIndex = 1;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.ForeColor = System.Drawing.Color.Black;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(761, 503);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "NAME";
+            this.columnHeader1.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "EMAIL";
+            this.columnHeader2.Width = 116;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "USERNAME";
+            this.columnHeader3.Width = 119;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "GENDER";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ROLE";
+            this.columnHeader5.Width = 137;
+            // 
+            // textEditorControl1
+            // 
+            this.textEditorControl1.IsReadOnly = false;
+            this.textEditorControl1.Location = new System.Drawing.Point(740, 453);
+            this.textEditorControl1.Name = "textEditorControl1";
+            this.textEditorControl1.Size = new System.Drawing.Size(100, 100);
+            this.textEditorControl1.TabIndex = 18;
+            this.textEditorControl1.Text = "textEditorControl1";
+            // 
+            // pdesc
+            // 
+            this.pdesc.IsReadOnly = false;
+            this.pdesc.Location = new System.Drawing.Point(197, 271);
+            this.pdesc.Name = "pdesc";
+            this.pdesc.Size = new System.Drawing.Size(297, 67);
+            this.pdesc.TabIndex = 25;
+            this.pdesc.Text = "Paste your bug here...";
+            // 
+            // listView3
+            // 
+            this.listView3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17});
+            this.listView3.Location = new System.Drawing.Point(340, 0);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(427, 510);
+            this.listView3.TabIndex = 0;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Name";
+            this.columnHeader15.Width = 138;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Fixed Date";
+            this.columnHeader16.Width = 155;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Solution";
+            this.columnHeader17.Width = 239;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(73, 12);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(205, 30);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "SOLUTION BOX";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(8, 99);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(107, 20);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Author Name";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(25, 164);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(90, 20);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "Fixed Date";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(67, 218);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(48, 20);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Code";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(121, 99);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(213, 30);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(121, 164);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(213, 30);
+            this.textBox3.TabIndex = 6;
+            // 
+            // csol
+            // 
+            this.csol.IsReadOnly = false;
+            this.csol.Location = new System.Drawing.Point(121, 209);
+            this.csol.Name = "csol";
+            this.csol.Size = new System.Drawing.Size(213, 176);
+            this.csol.TabIndex = 7;
+            this.csol.Text = "insert your right code";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(121, 433);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(213, 36);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "ADD";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1755,7 +1903,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pimage)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.solution.ResumeLayout(false);
+            this.solution.PerformLayout();
             this.useracc.ResumeLayout(false);
+            this.useracc.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1775,7 +1926,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox psource;
-        private System.Windows.Forms.TextBox pdesc;
         private System.Windows.Forms.TextBox pdate;
         private System.Windows.Forms.TextBox pmethod;
         private System.Windows.Forms.TextBox pclass;
@@ -1827,5 +1977,20 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.TextBox textBox1;
+        private ICSharpCode.TextEditor.TextEditorControl textEditorControl1;
+        private ICSharpCode.TextEditor.TextEditorControl pdesc;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private ICSharpCode.TextEditor.TextEditorControl csol;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ICSharpCode.TextEditor.Document;
 using MySql.Data.MySqlClient;
 
 namespace BugTrace
@@ -22,7 +23,18 @@ namespace BugTrace
         public dashboard(string uname, string pword,string type,string id)
         {
             InitializeComponent();
-            
+
+            string file = Application.StartupPath;
+            FileSyntaxModeProvider fsmp;
+            if (Directory.Exists(file))
+            {
+
+                fsmp = new FileSyntaxModeProvider(file);
+                HighlightingManager.Manager.AddSyntaxModeFileProvider(fsmp);
+                csol.SetHighlighting("C/C++");
+
+            }
+
             this.id = id;
             connection.Open();
             string sql = "select Name,Email,Username,Password,gender,role from register where Username ='" + uname + "' and Password = '" + pword + "'";
@@ -264,6 +276,20 @@ namespace BugTrace
 
         }
 
+        public void code()
+        {
+            string file = Application.StartupPath;
+            FileSyntaxModeProvider fsmp;
+            if (Directory.Exists(file))
+            {
+
+                fsmp = new FileSyntaxModeProvider(file);
+                HighlightingManager.Manager.AddSyntaxModeFileProvider(fsmp);
+                pdesc.SetHighlighting("C/C++");
+
+            }
+        }
+
         private void solution_Click(object sender, EventArgs e)
         {
 
@@ -299,9 +325,19 @@ namespace BugTrace
         {
 
         }
-       
+        
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
         {
 
         }
