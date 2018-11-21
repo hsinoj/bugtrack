@@ -139,5 +139,10 @@ namespace BugTrace
             f.Show();             // showed the specific form 
             Visible = false;     //parent form are closed where as child form are displayed.
         }
+
+        private void rname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

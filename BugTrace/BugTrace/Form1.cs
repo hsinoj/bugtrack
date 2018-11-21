@@ -18,7 +18,7 @@ namespace BugTrace
             InitializeComponent();
            
     }
-       
+       //initiliazing variables
         public string rol;
         public string uid;
 
@@ -52,7 +52,9 @@ namespace BugTrace
         private void button1_Click(object sender, EventArgs e)
         {
             
-            conn.Open();
+            conn.Open(); //opening connection for user login
+
+            //validation checking whether it is empy or not
           
             if (username.Text == string.Empty)
             {
@@ -65,6 +67,10 @@ namespace BugTrace
 
             else
             {
+                /*executing a select query for
+                 * 
+                 *
+                 *  */
                 MySqlCommand com = new MySqlCommand("select Username,Password,role,register_id from register where username ='" + username.Text + "' and password='" + password.Text + "'", conn);
                 
                 MySqlDataReader rd = com.ExecuteReader();

@@ -100,6 +100,7 @@
             this.rname.Size = new System.Drawing.Size(272, 17);
             this.rname.TabIndex = 4;
             this.rname.Text = "NAME";
+            this.rname.TextChanged += new System.EventHandler(this.rname_TextChanged);
             // 
             // rmail
             // 
