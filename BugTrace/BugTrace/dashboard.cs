@@ -58,7 +58,7 @@ namespace BugTrace
                 pdesc.SetHighlighting("C/C++");
 
             }
-
+           
             this.id = id;
             connection.Open();
             string sql = "select Name,Email,Username,Password,gender,role from register where Username ='" + uname + "' and Password = '" + pword + "'";
@@ -114,7 +114,7 @@ namespace BugTrace
 
             //method been calling
             account();
-          //  bugDisplay();
+            bugDisplay();
           
         }
 
@@ -176,55 +176,37 @@ namespace BugTrace
             else
             {
 
-              MemoryStream mm = new MemoryStream();
-                pimage.Image.Save(mm, pimage.Image.RawFormat);
-                byte[] b = mm.ToArray();
-               string qry = "insert into product(project_name,line_num_start,line_num_end,class_name,method,issued_date,description,author,source_file,image) " +
-                  "values " + "('" + pname.Text + "', '" + pstart.Text + "', '"
-                  + pend.Text + "','" + pclass.Text + "','" + pmethod.Text + "','" + pdate.Text + "', '" + pdesc.Text + "','" + aname.Text+"','" + psource.Text + "','" + b + "')";
-                MySqlCommand cmd = new MySqlCommand(qry, connection);
-/*
                 MemoryStream mm = new MemoryStream();
                 pimage.Image.Save(mm, pimage.Image.RawFormat);
                 byte[] b = mm.ToArray();
 
-       
-
-
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "insert into product(project_name,line_num_start,line_num_end,class_name,method,issued_date,description,author,source_file,image) " +"values (@pname,@pstart,@pend,@pmethod,@pdate,@pdesc,@anme,@psource,@pimage)";
-                cmd.Parameters.AddWithValue("@pname",pname); 
-                cmd.Parameters.AddWithValue("@pstart",pstart);
-                cmd.Parameters.AddWithValue("@pend",pend );   
-                cmd.Parameters.AddWithValue("@pclass", pclass);
-                cmd.Parameters.AddWithValue("@pmethod", pmethod); 
-                cmd.Parameters.AddWithValue("@pdate", pdate);   
-                cmd.Parameters.AddWithValue("@pdesc", pdesc); 
-                cmd.Parameters.AddWithValue("@anme", aname);    
-                cmd.Parameters.AddWithValue("@psource", psource);
+                string qry = "insert into product (project_name,line_num_start,line_num_end,class_name,method,issued_date,description,author,source_file,image) "
+    + "values (@pname,@pstart,@pend,@pclass,@pmethod,@pdate,@pdesc,@aname,@psource,@pimage)";
+                MySqlCommand cmd = new MySqlCommand(qry, connection);
+                cmd.Parameters.AddWithValue("@pname", pname.Text);
+                cmd.Parameters.AddWithValue("@pstart", pstart.Text);
+                cmd.Parameters.AddWithValue("@pend", pend.Text);
+                cmd.Parameters.AddWithValue("@pclass", pclass.Text);
+                cmd.Parameters.AddWithValue("@pmethod", pmethod.Text);
+                cmd.Parameters.AddWithValue("@pdate", pdate.Text);
+                cmd.Parameters.AddWithValue("@pdesc", pdesc.Text);
+                cmd.Parameters.AddWithValue("@aname", aname.Text);
+                cmd.Parameters.AddWithValue("@psource", psource.Text);
                 cmd.Parameters.AddWithValue("@pimage", b);
-                MessageBox.Show("hello");
-                cmd.ExecuteNonQuery();
-                */
 
 
-                try
+                if (cmd.ExecuteNonQuery() == 1)
                 {
-                    if (cmd.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("inserted");
-                    }
-                    else
-                    {
-                        MessageBox.Show("not inserted");
-                    }
+                    MessageBox.Show("inserted");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("not inserted");
                 }
             }
             connection.Close();
+
+            bugDisplay();
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -343,7 +325,6 @@ namespace BugTrace
             textBox11.Enabled = true;
             textBox12.Enabled = true;
             textBox13.Enabled = true;
-
             button3.Visible = false;
             button2.Visible = true;
 
@@ -430,38 +411,25 @@ namespace BugTrace
 
         //displaying bug in the list
 
-    /*   public void bugDisplay()
+      public void bugDisplay()
         {
-            
-            MySqlCommand cod = new MySqlCommand("select project_name,line_num_start,line_num_end,class_name,method,date_format(issued_date, '%Y-%m-%d'),description,author,source_file,image from product", connection);
- 
+
+            MySqlCommand cod = new MySqlCommand("select * from product", connection);
             MySqlDataAdapter mda = new MySqlDataAdapter(cod);
             DataTable dt = new DataTable();
             mda.Fill(dt);
             connection.Open();
             MySqlDataReader dat = cod.ExecuteReader();
-            MessageBox.Show("hello");
-
-
-            while (dat.Read())
-            {
-                pname.Text = .Rows[1]["project_name"].ToString();
-                pstart.Text = dt.Rows[2]["line_num_start"].ToString();
-                pend.Text = dt.Rows[3]["line_num_end"].ToString();
-                pclass.Text = dt.Rows[4]["class_name"].ToString();
-                pmethod.Text = dt.Rows[5]["method"].ToString();
-                pdate.Text = dt.Rows[6]["issued_date"].ToString();
-                pdesc.Text = dt.Rows[7]["description"].ToString();
-                aname.Text = dt.Rows[8]["author"].ToString();
-                psource.Text = dt.Rows[9]["source_file"].ToString();
-                byte[] bt = (byte[])dt.Rows[10]["image"];
-                MemoryStream m = new MemoryStream(bt);
-                pimage.Image = Image.FromStream(m);
-            }
-            
+            dataGridView1.DataSource = dt;
             connection.Close();
             mda.Dispose();
-        }*/
+        }
+
+
+
+
+
+
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -548,6 +516,199 @@ namespace BugTrace
      
 
         private void date_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pclass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int abc = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            Form2 f = new Form2(abc);
+            f.Show();
+            Visible = false;
+          
+            //MessageBox.Show(abc);
+        }
+
+      
+
+        private void profile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEditorControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pend_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pstart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pdate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void csol_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
         {
 
         }

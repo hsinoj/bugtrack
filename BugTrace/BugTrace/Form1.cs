@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace BugTrace
 {
@@ -112,6 +114,28 @@ namespace BugTrace
             
             reg.Show();
             Visible = false;
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            IWebDriver driver = new ChromeDriver();
+            // Launch the ToolsQA WebSite
+            driver.Url = ("https://github.com/hsinoj/bugtrack");
+
+            // Type Name in the FirstName text box      
+            //driver.FindElement(By.Name("firstname")).SendKeys("Lakshay");
+            driver.FindElement(By.Id("login_field")).SendKeys("wraithk94@gmail.com");
+
+            //Type LastName in the LastName text box
+            driver.FindElement(By.Id("password")).SendKeys("Jonish1234");
+
+            // Click on the Submit button
+            driver.FindElement(By.Name("commit")).Click();
         }
     }
 }
